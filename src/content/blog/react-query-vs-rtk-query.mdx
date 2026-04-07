@@ -1,0 +1,56 @@
+---
+title: "React Query vs RTK Query: A Practical Comparison"
+description: "An in-depth comparison of two dominant server-state libraries — when to use which, trade-offs, and real-world decision criteria."
+date: "2025-12-15"
+readTime: "8 min read"
+tags: ["React", "State Management", "Architecture"]
+---
+
+## The Server State Problem
+
+Client state and server state are fundamentally different. Client state is synchronous, local, and ephemeral. Server state is asynchronous, remote, and shared. Treating them the same way leads to over-fetching, stale data, and unnecessary complexity.
+
+Both React Query (TanStack Query) and RTK Query solve this — but with different philosophies.
+
+## React Query: Flexibility First
+
+React Query treats server state as a cache that needs to be kept fresh. Its mental model is simple: every piece of server data is identified by a **query key**, and the library handles fetching, caching, background refetching, and garbage collection.
+
+### Strengths
+
+- **Zero boilerplate** — no reducers, actions, or slices to define
+- **Automatic background refetching** — stale data is refreshed seamlessly
+- **DevTools** — excellent query inspector out of the box
+- **Framework agnostic** — works with any data-fetching approach
+- **Optimistic updates** — built-in support with rollback
+
+### When to Choose
+
+React Query excels when your application is primarily about fetching and displaying data, and your client state needs are minimal. If you don't already use Redux, there's no reason to introduce it just for server state.
+
+## RTK Query: Integrated Power
+
+RTK Query is built into Redux Toolkit. It generates API slices with endpoints, each producing hooks similar to React Query. But it lives inside the Redux store, which means server state and client state share one coherent state tree.
+
+### Strengths
+
+- **Unified state** — server and client state in one store
+- **Automatic cache invalidation** via tags — mutation on one endpoint can invalidate another
+- **Code generation** — OpenAPI integration for generating typed endpoints
+- **Request deduplication** — identical concurrent requests are merged
+- **Structural sharing** — minimizes unnecessary re-renders
+
+### When to Choose
+
+RTK Query is the right choice when you already use Redux Toolkit for client state. The 34% API call reduction I achieved on the CMS revamp project came from RTK Query's tag-based invalidation and request deduplication — replacing a hand-rolled caching layer.
+
+## Key Differences
+
+The fundamental difference is philosophical. React Query is a **standalone server-state library**. RTK Query is a **server-state layer inside a client-state manager**. Neither is objectively better — the right choice depends on your existing architecture.
+
+If you're starting fresh with minimal client state: **React Query**.
+If you already have Redux or need unified state management: **RTK Query**.
+
+## My Recommendation
+
+Don't choose based on popularity. Choose based on your project's state architecture. I've used both in production and would reach for either depending on the context. What matters is understanding _why_ you're choosing one over the other.

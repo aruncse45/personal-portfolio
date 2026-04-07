@@ -1,0 +1,53 @@
+---
+title: "Responsive Design: Beyond Media Queries"
+description: "Modern approaches to responsive design — container queries, fluid typography, intrinsic layouts, and why pixel-perfect thinking is outdated."
+date: "2025-10-08"
+readTime: "7 min read"
+tags: ["CSS", "Responsive Design", "Frontend"]
+---
+
+## The Problem with Breakpoint Thinking
+
+Traditional responsive design is built on a flawed assumption: that we know the screen sizes our users will have. Media queries at 768px, 1024px, and 1280px worked when there were a handful of device classes. Today, screens range from 320px watches to 3440px ultrawides.
+
+The shift is from **designing for devices** to **designing for content**.
+
+## Fluid Typography
+
+Instead of stepping between font sizes at breakpoints, use `clamp()` to create smoothly scaling typography:
+
+```css
+font-size: clamp(1rem, 0.5rem + 1.5vw, 1.25rem);
+```
+
+This gives you a minimum, a preferred fluid value, and a maximum. The text scales smoothly between them. No breakpoints needed. Pair this with a modular type scale and you get consistent, proportional typography at every viewport.
+
+## Container Queries
+
+Media queries respond to the **viewport**. Container queries respond to the **parent element**. This is a fundamental shift for component-based architecture.
+
+A card component shouldn't care about the viewport width. It should care about how much space _it_ has. Container queries let you write truly reusable components that adapt to their context, not the page.
+
+## Intrinsic Layouts
+
+CSS Grid's `auto-fit` and `minmax()` create layouts that respond to available space without any media queries:
+
+```css
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+```
+
+The grid will fit as many 280px-minimum columns as possible, stretching them equally to fill the row. Add items, remove items — the layout just works.
+
+## The Modern Stack
+
+A production responsive strategy in 2025 combines:
+
+- **Fluid typography** with `clamp()` for text scaling
+- **Container queries** for component-level responsiveness
+- **CSS Grid with auto-fit** for intrinsic layouts
+- **Logical properties** (`inline`, `block`) for internationalization
+- **Media queries** only for true layout shifts (e.g., sidebar to hamburger)
+
+## Practical Advice
+
+Stop thinking in breakpoints. Start thinking in constraints. Define the minimum and maximum sizes your content needs, and let CSS handle everything in between. Your components will be more reusable, your code will be simpler, and your layouts will work on devices that don't exist yet.

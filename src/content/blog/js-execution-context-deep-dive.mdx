@@ -1,0 +1,51 @@
+---
+title: "JavaScript Execution Context: A Deep Dive"
+description: "Understanding how JavaScript executes code under the hood — execution contexts, the call stack, hoisting, and closures explained from first principles."
+date: "2025-11-20"
+readTime: "10 min read"
+tags: ["JavaScript", "Fundamentals", "Deep Dive"]
+---
+
+## Why This Matters
+
+Most JavaScript developers can write closures. Fewer can explain _why_ they work. Understanding execution contexts is the difference between memorizing patterns and truly knowing the language.
+
+## What Is an Execution Context?
+
+Every time JavaScript runs a piece of code, it creates an **execution context** — an environment where that code is evaluated. There are three types:
+
+- **Global Execution Context** — created when your script first runs
+- **Function Execution Context** — created every time a function is called
+- **Eval Execution Context** — created inside `eval()` (rarely used)
+
+Each execution context goes through two phases: the **Creation Phase** and the **Execution Phase**.
+
+## The Creation Phase
+
+During creation, the JavaScript engine does three things:
+
+1. **Creates the Variable Object (VO)** — scans for function declarations and variable declarations. Functions are stored in full, variables are initialized as `undefined`. This is hoisting.
+
+2. **Creates the Scope Chain** — the current context's variable object plus all parent variable objects. This chain is what makes closures possible.
+
+3. **Determines the value of `this`** — based on how the function was called, not where it was defined.
+
+## The Call Stack
+
+Execution contexts are managed via a **call stack** (LIFO). The global context sits at the bottom. Every function call pushes a new context on top. When a function returns, its context is popped off.
+
+This is why deeply recursive functions can cause a stack overflow — each recursive call adds a new execution context to the stack.
+
+## Closures: The Practical Payoff
+
+A closure is a function that retains access to its lexical scope even when executed outside that scope. This works because the function's execution context maintains a reference to its parent's variable object via the scope chain.
+
+When you create a function inside another function, the inner function's scope chain includes the outer function's variable object. Even after the outer function returns and its execution context is popped off the call stack, the inner function still holds a reference to those variables.
+
+## Hoisting Demystified
+
+Hoisting isn't about code being moved to the top. It's about the creation phase. During creation, function declarations are fully stored in the variable object, while `var` declarations are initialized as `undefined`. `let` and `const` declarations are hoisted too — but they're placed in the **Temporal Dead Zone** until their declaration is reached during execution.
+
+## Key Takeaway
+
+Every behavior in JavaScript — hoisting, closures, `this` binding, scope — traces back to execution contexts. Understanding this mental model turns debugging from guesswork into logic.
