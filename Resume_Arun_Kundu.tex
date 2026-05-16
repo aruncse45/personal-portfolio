@@ -1,0 +1,334 @@
+\documentclass[11pt,a4paper]{article}
+
+% ─── Packages ───
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+% ─── Colors ───
+\definecolor{primary}{HTML}{1A1A2E}
+\definecolor{accent}{HTML}{0F3460}
+\definecolor{linkcolor}{HTML}{1565C0}
+
+% ─── Hyperlink setup ───
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    pdfborderstyle={/S/U/W 1}
+}
+
+% ─── Section formatting ───
+\titleformat{\section}{\large\bfseries\color{primary}\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+\titleformat{\subsection}[runin]{\bfseries\color{accent}}{}{0em}{}
+\titlespacing{\subsection}{0pt}{6pt}{3pt}
+
+% ─── Remove page numbers ───
+\pagestyle{empty}
+
+% ─── Custom commands ───
+\newcommand{\role}[4]{
+    \noindent\textbf{\large #1} \hfill \textbf{#2} \\
+    \textit{#3} \hfill \textit{#4}
+    \vspace{2pt}
+}
+
+\newcommand{\project}[2]{
+    \noindent\textbf{#1} \hfill \textit{Tech: #2}
+    \vspace{1pt}
+}
+
+% ─── Document ───
+\begin{document}
+
+% ═══════════════════════════════════════
+% COVER LETTER
+% ═══════════════════════════════════════
+\noindent{\LARGE\bfseries Arun Kundu}\\[6pt]
+\href{mailto:arunkundu45837@gmail.com}{arunkundu45837@gmail.com}\\[4pt]
++880-1701009670
+
+\vspace{24pt}
+
+\noindent Dear Concern,
+
+\vspace{10pt}
+
+\noindent I am writing to express my interest in the Senior Full-Stack Engineer (TypeScript / Node.js / React) position at CHEQ.
+
+\vspace{10pt}
+
+\noindent With 6+ years of industry experience, I have spent the last 5 years building frontend-heavy products while working closely with backend systems and cross-functional engineering teams. Before this, I also gained professional backend development experience, and I am now eager to contribute in a Full-Stack JavaScript Developer role where I can combine my frontend depth with backend ownership.
+
+
+\vspace{10pt}
+
+\noindent Currently, I am working at Shikho, where I lead a team of two developers on projects, enhancing my leadership and collaborative skills. At Monstarlab, I sharpened my skills in JavaScript, React.js, and the Next.js ecosystem while working on projects for international clients with borderless tech team. Similarly, my experience at My Medical Hub and WellDev Bangladesh Ltd. has provided me with a solid foundation in both frontend and backend technologies.
+
+\vspace{10pt}
+
+\noindent I did pet project using Express.js, MongoDB, and had professional experience on Java, Spring boot. Recently, I completed a full-stack \href{https://github.com/aruncse45/clockit-clone}{project} using Next.js, Postgres DB in Supabase, and Drizzle ORM. I have also started working on a food delivery microservice \href{https://github.com/aruncse45/food-delivery-microservice}{project} to strengthen my backend architecture and service-design skills. My professional experience in Javascript ecosystem, along with my enthusiasm for full-stack development, makes me confident that I can excel in this role.
+
+
+\vspace{10pt}
+
+\noindent I bring a strong work ethic, adaptability, and collaboration skills, and I am eager to contribute to CHEQ by delivering high-quality solutions.
+
+\vspace{10pt}
+
+\noindent Thank you for considering my application.
+
+\vspace{18pt}
+
+\noindent Sincerely,\\
+Arun Kundu
+
+\newpage
+
+% ═══════════════════════════════════════
+% HEADER
+% ═══════════════════════════════════════
+\noindent
+\begin{minipage}[t]{0.65\textwidth}
+    \vspace{0pt}
+    {\LARGE\bfseries Arun Kundu} \\[4pt]
+    Software Engineer with \textbf{6+ years of experience} \\[8pt]
+    \faIcon{map-marker-alt}\ Dhaka, Bangladesh \\[2pt]
+    \faIcon{phone}\ +880-1701009670 \\[2pt]
+    \faIcon{globe}\ \href{https://arunkundu.vercel.app/}{arunkundu.vercel.app} \\[2pt]
+    \faIcon{envelope}\ \href{mailto:arunkundu45837@gmail.com}{arunkundu45837@gmail.com} \\[2pt]
+    \faIcon{github}\ \href{https://github.com/aruncse45}{github.com/aruncse45} \\[2pt]
+    \faIcon{linkedin}\ \href{https://www.linkedin.com/in/arun-kundu-381a07165}{linkedin.com/in/arun-kundu} \\[2pt]
+    \faIcon{bitbucket}\ \href{https://bitbucket.org/arunruet45/workspace/repositories/}{bitbucket.org/arunruet45}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+    \vspace{0pt}
+    \raggedleft
+    \includegraphics[width=4.5cm, height=5.5cm, keepaspectratio]{arunkundu.png}
+\end{minipage}
+
+\vspace{4pt}
+
+% ═══════════════════════════════════════
+% SKILLS
+% ═══════════════════════════════════════
+\section{Skills Summary}
+
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Languages \& Frameworks} & JavaScript, TypeScript, React.js, Next.js, Vue.js, Angular \\[2pt]
+\textbf{State Management}        & Redux, Redux Toolkit, Zustand, Context API \\[2pt]
+\textbf{Data Fetching}           & Restful API, GraphQL, RTK Query, React Query, Axios, Fetch API \\[2pt]
+\textbf{Forms \& Validation}     & React Hook Form, Formik, Antd Form, Yup, Zod \\[2pt]
+\textbf{Testing}                 & Jest, Vitest, React Testing Library \\[2pt]
+\textbf{UI \& Styling}           & Ant Design, Material UI, Shadcn UI, Tailwind CSS, SCSS, Storybook \\[2pt]
+\textbf{CMS}                     & Strapi, Contentful, Builder.io \\[2pt]
+\textbf{Backend}                 & Node.js, Express.js, Nest.js, Java, Drizzle ORM, PostgreSQL, MongoDB, Rabbitmq, Redis \\[2pt]
+\textbf{Mobile}                  & React Native, Expo CLI \\[2pt]
+\textbf{DevOps \& Tooling}       & Docker, GitHub Actions, Vercel, Nginx \\[2pt]
+\textbf{Monitoring \& Quality}   & Datadog, Sentry, Lighthouse, Web Vitals, SonarQube \\[2pt]
+\textbf{Collaboration}           & Git, Jira, Confluence, Figma, Agile/Scrum \\[2pt]
+\textbf{Concepts}                & OOP, Accessibility, i18n/RTL, Microservice, CI/CD \\[2pt]
+\textbf{AI tools}                & Cursor, Claude CLI, Codex, Gemini CLI,  etc \\[2pt]
+\end{tabularx}
+
+% ═══════════════════════════════════════
+% WORK EXPERIENCE
+% ═══════════════════════════════════════
+\section{Work Experience}
+
+% ─── Shikho ───
+\role{Senior Frontend Engineer I}{February 2025 -- Present}{\href{https://shikho.com}{Shikho} -- Dhaka, Bangladesh}{}
+
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item Built \textbf{Shikho AI}, using \textbf{Gemini-2.0-flash} for subject-specific student assistance with custom context.
+    \item Led \textbf{Shikho Student Portal revamp} with full redesign, codebase refactoring, and 20\% faster initial load time. Built video learning platform similar to YouTube/Shorts for academic content.
+\end{itemize}
+
+\vspace{4pt}
+
+% ─── Monstarlab (Jul 2024 – Jan 2025) ───
+\role{Frontend Engineer II}{July 2024 -- January 2025}{\href{https://shikho.com}{Shikho} -- Dhaka, Bangladesh}{}
+
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item Added multi-timezone support during CMS revamp and reduced redundant API calls by \textbf{\raise.17ex\hbox{$\scriptstyle\sim$}34\%}.
+    \item Led projects with two developers, managing tasks and collaboration.
+\end{itemize}
+
+\vspace{4pt}
+% ─── Selected Projects (Shikho) ───
+\noindent{\bfseries\color{accent}Projects at Shikho}
+
+\vspace{1pt}
+
+\project{Website, Student portal, CMS, Reporting, Shikho shop, Shikho AI} {Next.js, Graphql etc}
+
+\vspace{4pt}
+
+% ─── Monstarlab (Feb 2023 – Jun 2024) ───
+\role{Frontend Engineer II}{February 2023 -- June 2024}{\href{https://monstar-lab.com/bd/}{Monstarlab} -- Dhaka, Bangladesh}{}
+
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item Analyzed requirements with international clients, broke down complex features into deliverables
+    \item Built 20+ reusable components, reducing development time by approx. 25\% across multiple projects.
+\end{itemize}
+
+\vspace{4pt}
+
+% ─── Monstarlab (Feb 2022 – Jan 2023) ───
+\role{Frontend Engineer I}{February 2022 -- January 2023}{\href{https://monstar-lab.com/bd/}{Monstarlab} -- Dhaka, Bangladesh}{}
+
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item Collaborated with borderless tech teams.
+    \item Developing new user-facing features using React.js.
+\end{itemize}
+
+\vspace{4pt}
+
+% ─── Selected Projects (Monstarlab) ───
+\noindent{\bfseries\color{accent}Selected Projects at Monstarlab}
+\vspace{1pt}
+
+\project{European Parcel Service Platform}{React.js, Next.js, RTK Query, Google Maps, Datadog}
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item Used \textbf{RTK OpenAPI code generation} to create RTK Query APIs, accelerating development by approximately 20\% and ensuring synchronization of data types with the backend.
+\end{itemize}
+
+\vspace{3pt}
+
+\project{Mexpense (Expense Management Software)}{React.js, Redux, Redux-Thunk, Antd Form}
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item Led project last-minute, resolved critical bugs, prepared English \& Arabic report PDFs, and delivered a relatively bug-free production launch within one month.
+\end{itemize}
+
+\vspace{3pt}
+
+\project{Website of Saudi govt. owned Company.}{Next.js, Contentful and Mailchimp.}
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item Built APIs with Next.js and integrated Mailchimp directly, eliminating the need for a separate backend.
+\end{itemize}
+
+\vspace{3pt}
+
+\project{Servicedesk}{Angular}
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item Worked on legacy projects using Angular for short periods, quickly adapted, fixed production bugs, and added new features.
+\end{itemize}
+
+\vspace{4pt}
+
+% ─── My Medical Hub (Frontend Engineer) ───
+\role{Frontend Engineer}{January 2021 -- January 2022}{\href{https://mymedicalhub.com}{My Medical Hub} -- Dhaka, Bangladesh}{}
+
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item Requirement analysis, task breakdown for juniors, code review, and web deployment management.
+\end{itemize}
+
+\vspace{4pt}
+
+% ─── My Medical Hub (Junior) ───
+\role{Junior Software Engineer}{June 2020 -- December 2020}{\href{https://mymedicalhub.com}{My Medical Hub} -- Dhaka, Bangladesh}{}
+
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item Developed new user-facing features using React.js.
+    \item Worked with ML team to integrate ML features in frontend.
+\end{itemize}
+
+\vspace{4pt}
+
+\project{Web app - Musculoskeletal management assistant platform.}{React.js, Context API}
+\vspace{2pt}
+
+\project{Mobile app - Same functionality as web app.}{React Native, Expo CLI, Context API}
+
+\vspace{4pt}
+
+% ─── WellDev ───
+\role{Junior Frontend Engineer}{November 2019 -- March 2020}{\href{https://www.welldev.io}{WellDev Bangladesh Ltd} -- Dhaka, Bangladesh}{}
+
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item Worked with \textbf{Spring Boot (backend)} and \textbf{Angular (frontend)}.
+    \item Wrote unit tests for backend APIs and frontend components.
+\end{itemize}
+
+\vspace{4pt}
+
+\project{\href{https://www.pidas.com/cora-der-intelligente-it-automat}{CORA} -- Smart Locker Service}{Tech: Spring Boot, Hibernate, Angular, PostgreSQL}
+
+% ═══════════════════════════════════════
+% PERSONAL PROJECTS
+% ═══════════════════════════════════════
+\section{Personal Projects}
+
+\begin{itemize}[leftmargin=16pt, nosep]
+    \item \textbf{\href{https://github.com/aruncse45/food-delivery-microservice}{Food Delivery App Microservices}}
+    \item \textbf{\href{https://github.com/aruncse45/clockit-clone}{Employee Timelog}} --- Fullstack project using Next.js
+    \item \textbf{\href{https://bitbucket.org/arunruet45/demonodejs}{MailSender}} --- Express.js, Nodemailer, Mongoose, bcrypt
+\end{itemize}
+
+\noindent More projects available on \href{https://github.com/aruncse45}{GitHub} and \href{https://bitbucket.org/arunruet45/workspace/repositories/}{Bitbucket}.
+
+% ═══════════════════════════════════════
+% EDUCATION
+% ═══════════════════════════════════════
+\section{Education}
+
+\noindent\textbf{B.Sc in Computer Science \& Engineering} \hfill \textbf{2015 -- 2019} \\
+Rajshahi University of Engineering \& Technology (RUET) \hfill CGPA: \textbf{3.11}
+
+% ═══════════════════════════════════════
+% PROBLEM SOLVING
+% ═══════════════════════════════════════
+\section{Problem Solving}
+\begin{multicols}{3}
+\begin{itemize}[leftmargin=16pt, nosep]
+    % ── Replace # with actual profile URLs ──
+    \item \href{https://lightoj.com/user/arunaka837}{LightOJ Profile}
+    \item \href{https://uhunt.onlinejudge.org/id/737005}{UVA Profile}
+    \item \href{https://dimikoj.com/profile/2692?ak47}{DimikOJ Profile}
+\end{itemize}
+\end{multicols}
+
+% ═══════════════════════════════════════
+% KNOWLEDGE SHARING
+% ═══════════════════════════════════════
+\section{Knowledge Sharing}
+
+\noindent Tech sessions on:
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=16pt, nosep]
+    % ── Replace # with actual session/slide URLs ──
+    \item \href{https://docs.google.com/presentation/d/1xjFLym2X9WOoj7Q16_mH7VWW_SJ7DFnv/edit?usp=sharing&ouid=100634672342634457425&rtpof=true&sd=true}{JS Engine}
+    \item \href{https://docs.google.com/presentation/d/1TUGBY-8C-YOUm-CnOhk9EqQoxsvuthSf/edit?usp=sharing&ouid=100634672342634457425&rtpof=true&sd=true}{JS Execution Context}
+    \item \href{https://docs.google.com/presentation/d/1Uytrqu6ibIR-9olpFifWpqo4gdNvCAln/edit?usp=sharing&ouid=100634672342634457425&rtpof=true&sd=true}{React Query}
+    \item \href{https://docs.google.com/presentation/d/1uYG9mzbKJM8KkgcCsmLXGSRrkqcaHk82/edit?usp=sharing&ouid=100634672342634457425&rtpof=true&sd=true}{React Query vs RTK Query}
+\end{itemize}
+\end{multicols}
+
+\noindent
+\begin{itemize}[leftmargin=16pt, nosep]
+    % ── Replace # with actual session/slide URLs ──
+    \item Blog: \href{https://docs.google.com/document/d/19ihkkZDN5kY571veC-wDZbDn_TI7613KgiTOLr_yrmo/edit?tab=t.0#heading=h.c2h1ny55aoij}{AI code review analysis.}
+    \item Blog: \href{https://endurable-moon-712.notion.site/Responsive-Design-approaches-Across-Devices-4acbf535cfb8425794e9bf36b3fd58d0?pvs=4}{Responsive Design Approaches Across Devices}
+    \item Participated in Monstarlab hackathon (2023 \& 2024).
+\end{itemize}
+
+% ═══════════════════════════════════════
+% INTERESTS
+% ═══════════════════════════════════════
+\section{Interests}
+
+Table Tennis \textbar{} Football \textbar{} Gardening
+
+\end{document}
